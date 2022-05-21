@@ -42,9 +42,9 @@ export default function Table(){
         for (let col = 0; col < 7; col ++){
             for (let row = 0; row < 3; row++){
                 if (tableState[col][row] != null &&
-                    tableState[col][row] == tableState[col][row + 1] &&
-                    tableState[col][row] == tableState[col][row + 2] &&
-                    tableState[col][row] == tableState[col][row + 3]){
+                    tableState[col][row] === tableState[col][row + 1] &&
+                    tableState[col][row] === tableState[col][row + 2] &&
+                    tableState[col][row] === tableState[col][row + 3]){
                         return true
                 }
             }
@@ -53,9 +53,9 @@ export default function Table(){
         for (let col = 0; col < 4; col ++){
             for (let row = 0; row < 6; row++){
                 if (tableState[col][row] != null &&
-                    tableState[col][row] == tableState[col + 1][row] &&
-                    tableState[col + 1][row] == tableState[col + 2][row] &&
-                    tableState[col + 2][row] == tableState[col + 3][row]){
+                    tableState[col][row] === tableState[col + 1][row] &&
+                    tableState[col + 1][row] === tableState[col + 2][row] &&
+                    tableState[col + 2][row] === tableState[col + 3][row]){
                         return true
                 }
             }
@@ -64,9 +64,9 @@ export default function Table(){
         for (let col = 0; col < 7; col ++){
             for (let row = 0; row < 6; row++){
                 if (tableState[col][row] != null &&
-                    tableState[col][row] == tableState[col + 1][row + 1] &&
-                    tableState[col + 1][row + 1] == tableState[col + 2][row + 2] &&
-                    tableState[col + 2][row + 2] == tableState[col + 3][row + 3]){
+                    tableState[col][row] === tableState[col + 1][row + 1] &&
+                    tableState[col + 1][row + 1] === tableState[col + 2][row + 2] &&
+                    tableState[col + 2][row + 2] === tableState[col + 3][row + 3]){
                         return true
                 }
             }
@@ -76,9 +76,9 @@ export default function Table(){
             //starts at 5 cus up left win can only be checked after 4th column
             for (let row = 5; row >= 3; row--){
                 if (tableState[col][row] != null &&
-                    tableState[col][row] == tableState[col + 1][row - 1] &&
-                    tableState[col + 1][row - 1] == tableState[col + 2][row - 2] &&
-                    tableState[col + 2][row - 2] == tableState[col + 3][row - 3]){
+                    tableState[col][row] === tableState[col + 1][row - 1] &&
+                    tableState[col + 1][row - 1] === tableState[col + 2][row - 2] &&
+                    tableState[col + 2][row - 2] === tableState[col + 3][row - 3]){
                         return true
                 }
             }
@@ -96,7 +96,7 @@ export default function Table(){
                 [index]: column
             }
         )
-        setPlayer(player == "Red" ? "Yellow" : "Red")
+        setPlayer(player === "Red" ? "Yellow" : "Red")
         if (gameOver()){
             alert(`game over, ${player} wins`);
         }
