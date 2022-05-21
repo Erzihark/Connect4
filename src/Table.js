@@ -18,7 +18,7 @@ function Column({col, index, onClick}){
 
 function TurnDisplay({player}){
     let background = player.toLowerCase();
-    let display = player + "'s" + " turn";
+    let display = `${player}'s turn`;
 
     return(
         <div>
